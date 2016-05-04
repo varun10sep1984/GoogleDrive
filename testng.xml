@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Need to thread-count if we want parallel execution, and as required-->
+<suite name="Google Drive Test Run" parallel="tests" thread-count="1">
+	<!-- Need to provide value as ""on" if we want to run the test on grid, else "off"-->
+	<parameter name="grid" value="off" />
+	<!-- Need to create test for various conbinations of OS and browser we need to test on-->
+	<test name="GD Test On ie32bit">
+		<parameter name="osName" value="windows" />
+		<parameter name="browser" value="ie32bit" />
+		<classes>
+			<class name="com.gd.selenium.test.GoogleDriveTest" />
+		</classes>
+	</test>
+	<test name="GD Test On Chrome">
+		<parameter name="osName" value="windows" />
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.gd.selenium.test.GoogleDriveTest" />
+		</classes>
+	</test>
+	<test name="GD Test On firefox">
+		<parameter name="osName" value="windows" />
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.gd.selenium.test.GoogleDriveTest" />
+		</classes>
+	</test>
+</suite>
